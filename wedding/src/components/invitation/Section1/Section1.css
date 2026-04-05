@@ -5,8 +5,29 @@
   gap: 0.65rem;
 }
 
-.section1 .inv-card {
+/**
+ * KA + nombres: ancho completo del viewport, sin aspecto de tarjeta
+ * (sin redondeo ni sombra). Rompe el max-width de `.invitation`.
+ */
+.section1__bleed {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: relative;
+}
+
+.section1__bleed .inv-card {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* El subtítulo sigue siendo tarjeta con sombra suave */
+.section1 > .intro-card.inv-card {
   box-shadow:
-    0 2px 4px rgba(15, 40, 12, 0.08),
-    0 14px 32px -10px rgba(15, 40, 12, 0.2);
+    0 4px 6px -1px rgba(15, 40, 12, 0.12),
+    0 12px 24px -8px rgba(15, 40, 12, 0.18);
 }

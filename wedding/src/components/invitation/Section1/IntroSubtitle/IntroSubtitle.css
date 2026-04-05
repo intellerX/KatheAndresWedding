@@ -26,3 +26,19 @@
   margin: 0 0.4em;
   vertical-align: middle;
 }
+
+@media (max-width: 640px) {
+  .intro-card {
+    padding: 1rem 0.9rem 1.2rem;
+  }
+
+  .intro-card__text {
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
+
+  .intro-card__text::before,
+  .intro-card__text::after {
+    margin: 0 0.25em;
+  }
+}

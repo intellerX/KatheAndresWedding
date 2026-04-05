@@ -135,6 +135,35 @@
   margin-top: 0.85rem;
 }
 
+@media (max-width: 640px) {
+  .preguntas {
+    padding: 1.25rem 0.85rem 1.65rem;
+  }
+
+  .preguntas__title {
+    font-size: clamp(1.75rem, 6vw, 2.35rem);
+    margin-bottom: 1.15rem;
+    text-align: center;
+  }
+
+  .preguntas__stack {
+    max-width: 100%;
+  }
+
+  .preguntas__question {
+    font-size: 1rem;
+  }
+
+  .preguntas__answer p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .preguntas__head {
+    gap: 0.5rem;
+  }
+}
+
 .preguntas__link {
   color: var(--forest);
   font-weight: 600;

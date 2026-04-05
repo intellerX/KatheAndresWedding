@@ -25,6 +25,9 @@
   font-size: 1.05rem;
   line-height: 1.65;
   text-align: center;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
 }
 
 .story-text__body p {
@@ -35,12 +38,23 @@
   margin-bottom: 0;
 }
 
+@media (max-width: 640px) {
+  .story-text {
+    padding: 1.35rem 1rem;
+  }
+
+  .story-text__body {
+    font-size: 0.98rem;
+    line-height: 1.68;
+  }
+}
+
 @media (max-width: 420px) {
   .story-text__vine {
     display: none;
   }
 
   .story-text {
-    padding-inline: 1.25rem;
+    padding-inline: 0.85rem;
   }
 }

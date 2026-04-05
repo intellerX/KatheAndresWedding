@@ -2,6 +2,12 @@
   padding: 1.25rem;
 }
 
+@media (max-width: 640px) {
+  .story-photo {
+    padding: 1rem 0.85rem;
+  }
+}
+
 .story-photo__frame {
   border: 1px solid rgba(45, 90, 39, 0.25);
   border-radius: 8px;

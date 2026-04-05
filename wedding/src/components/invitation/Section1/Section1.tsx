@@ -6,8 +6,10 @@ import './Section1.css'
 export function Section1() {
   return (
     <section className="section1" aria-label="Encabezado de la invitación">
-      <HeroHeader />
-      <Names />
+      <div className="section1__bleed">
+        <HeroHeader />
+        <Names />
+      </div>
       <IntroSubtitle />
     </section>
   )

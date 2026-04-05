@@ -10,10 +10,18 @@ html {
   color-scheme: only light;
 }
 
+/* En escritorio la invitación se ve más grande (equivale ~175% zoom del navegador) */
+@media (min-width: 1024px) {
+  html {
+    zoom: 1.75;
+  }
+}
+
 body {
   margin: 0;
   min-height: 100svh;
   background: #e8e4dc;
+  overflow-x: hidden;
 }
 
 #root {

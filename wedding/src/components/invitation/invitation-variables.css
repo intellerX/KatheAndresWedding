@@ -27,12 +27,20 @@
 
 .invitation {
   max-width: 28rem;
+  width: 100%;
   margin: 0 auto;
   padding: 1.5rem 1rem 3rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   color: var(--ink);
+  box-sizing: border-box;
+  /* Evita desbordes horizontales por min-width:auto en flex */
+  min-width: 0;
+}
+
+.invitation > * {
+  min-width: 0;
 }
 
 .inv-card {
@@ -61,8 +69,33 @@
   gap: 1rem;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .location-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* Móvil: más aire útil y tarjetas menos apretadas */
+@media (max-width: 640px) {
+  .invitation {
+    padding: 1rem max(0.75rem, env(safe-area-inset-right))
+      max(2.5rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+    gap: 1rem;
+  }
+
+  .inv-card {
+    padding: 1.2rem 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .invitation {
+    padding-inline: max(0.65rem, env(safe-area-inset-left)) max(0.65rem, env(safe-area-inset-right));
+  }
+}
+
+/* Textos largos (direcciones, FAQ) sin romper el layout en móvil */
+.venue-card__title,
+.venue-card__address {
+  overflow-wrap: anywhere;
 }
