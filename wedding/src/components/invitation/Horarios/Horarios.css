@@ -1,0 +1,133 @@
+.horarios {
+  position: relative;
+  padding: 1.35rem 1.25rem 2rem;
+}
+
+.horarios__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.horarios__photo {
+  margin: 0;
+}
+
+.horarios__frame {
+  border: 1px solid rgba(45, 90, 39, 0.22);
+  border-radius: 8px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.horarios__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.horarios__placeholder {
+  aspect-ratio: 3 / 4;
+  border-radius: 5px;
+  background:
+    linear-gradient(160deg, rgba(45, 90, 39, 0.1), rgba(253, 245, 230, 0.95)),
+    radial-gradient(circle at 40% 25%, rgba(45, 90, 39, 0.12), transparent 55%);
+  display: grid;
+  place-items: center;
+}
+
+.horarios__placeholder-label {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--forest);
+  opacity: 0.6;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.horarios__content {
+  min-width: 0;
+}
+
+.horarios__title {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--forest);
+  line-height: 1.15;
+}
+
+.horarios__date {
+  margin: 0 0 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--forest);
+  text-transform: uppercase;
+}
+
+.horarios__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.horarios__row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem 0.85rem;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(45, 90, 39, 0.22);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+.horarios__row:first-of-type {
+  padding-top: 0;
+}
+
+.horarios__row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.horarios__time {
+  font-weight: 600;
+  color: var(--forest);
+  white-space: nowrap;
+}
+
+.horarios__event {
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.horarios__floral {
+  position: absolute;
+  right: -0.25rem;
+  bottom: -0.25rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  color: var(--forest);
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+@media (max-width: 520px) {
+  .horarios__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .horarios__photo {
+    max-width: 14rem;
+    margin-inline: auto;
+  }
+}

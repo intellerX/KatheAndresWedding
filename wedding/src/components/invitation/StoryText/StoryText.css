@@ -1,0 +1,46 @@
+.story-text {
+  position: relative;
+  padding: 1.75rem 1.75rem 1.75rem 2rem;
+}
+
+.story-text__vine {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  width: 1.5rem;
+  height: 8rem;
+  color: var(--forest);
+}
+
+.story-text__vine--left {
+  left: 0.35rem;
+}
+
+.story-text__vine--right {
+  right: 0.35rem;
+}
+
+.story-text__body {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.story-text__body p {
+  margin: 0 0 1rem;
+}
+
+.story-text__body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 420px) {
+  .story-text__vine {
+    display: none;
+  }
+
+  .story-text {
+    padding-inline: 1.25rem;
+  }
+}

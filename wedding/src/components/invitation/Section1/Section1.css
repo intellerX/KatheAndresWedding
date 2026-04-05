@@ -1,0 +1,12 @@
+/* Bloque superior: héroe + nombres + subtítulo — ritmo unificado */
+.section1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.section1 .inv-card {
+  box-shadow:
+    0 2px 4px rgba(15, 40, 12, 0.08),
+    0 14px 32px -10px rgba(15, 40, 12, 0.2);
+}

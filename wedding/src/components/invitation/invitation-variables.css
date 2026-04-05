@@ -1,0 +1,68 @@
+/* Tokens + layout compartidos para todas las tarjetas */
+:root {
+  --forest: #2d5a27;
+  --forest-deep: #1e3d1a;
+  --cream: #fdf5e6;
+  --cream-muted: #f5ecd8;
+  --ink: #1a1a18;
+  --white: #fafaf8;
+
+  --font-display: 'Great Vibes', cursive;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  /* Títulos de invitación / nombres / monograma */
+  --font-wedding-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  /* Líneas cortas tipo invitación formal */
+  --font-invite-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  /* Cuerpo largo legible (FAQ, textos) */
+  --font-reading: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+
+  /* Acentos (botones, bordes formularios) */
+  --gold: #efd244;
+  --gold-hover: #f5df6a;
+  --gold-muted: rgba(239, 210, 68, 0.45);
+  --forest-panel: rgba(255, 255, 255, 0.1);
+  --forest-panel-strong: rgba(255, 255, 255, 0.16);
+}
+
+.invitation {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: var(--ink);
+}
+
+.inv-card {
+  position: relative;
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  box-shadow:
+    0 4px 6px -1px rgba(15, 40, 12, 0.12),
+    0 12px 24px -8px rgba(15, 40, 12, 0.18);
+  overflow: hidden;
+}
+
+.inv-card--forest {
+  background: linear-gradient(165deg, var(--forest) 0%, var(--forest-deep) 100%);
+  color: var(--white);
+}
+
+.inv-card--cream {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-muted) 100%);
+  border: 1px solid rgba(45, 90, 39, 0.12);
+}
+
+.location-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 520px) {
+  .location-row {
+    grid-template-columns: 1fr;
+  }
+}

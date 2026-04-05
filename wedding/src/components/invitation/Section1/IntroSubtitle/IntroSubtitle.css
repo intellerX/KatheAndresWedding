@@ -1,0 +1,28 @@
+.intro-card {
+  text-align: center;
+  padding: 1.15rem 1.35rem 1.4rem;
+}
+
+.intro-card__text {
+  margin: 0 auto;
+  max-width: 22rem;
+  font-family: var(--font-invite-body);
+  font-size: 0.98rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+  color: rgba(255, 252, 248, 0.9);
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+.intro-card__text::before,
+.intro-card__text::after {
+  content: '❧';
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 0.65em;
+  opacity: 0.45;
+  margin: 0 0.4em;
+  vertical-align: middle;
+}

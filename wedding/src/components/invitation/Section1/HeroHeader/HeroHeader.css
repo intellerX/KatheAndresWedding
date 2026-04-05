@@ -1,0 +1,69 @@
+.hero-header {
+  position: relative;
+  text-align: center;
+  padding: 2.15rem 1.25rem 2.35rem;
+  /* Capa base = mismo verde que .inv-card--forest; brillo encima (sin transparencia al fondo de la página) */
+  background:
+    radial-gradient(
+      ellipse 120% 80% at 50% 0%,
+      rgba(255, 255, 255, 0.08) 0%,
+      transparent 58%
+    ),
+    linear-gradient(165deg, var(--forest) 0%, var(--forest-deep) 100%);
+}
+
+.hero-header__floral {
+  position: absolute;
+  width: 6.75rem;
+  height: 6.75rem;
+  opacity: 0.26;
+  color: inherit;
+}
+
+.hero-header__floral--tl {
+  top: 0.2rem;
+  left: 0.15rem;
+}
+
+.hero-header__floral--br {
+  bottom: 0.15rem;
+  right: 0.15rem;
+}
+
+.hero-header__date {
+  margin: 0 0 1.35rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 252, 248, 0.18);
+  display: inline-block;
+  min-width: min(18rem, 100%);
+}
+
+.hero-header__date-inner {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(255, 252, 248, 0.88);
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+.hero-header__monogram {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-header__wreath {
+  width: min(13.5rem, 70vw);
+  height: auto;
+  color: rgba(255, 252, 248, 0.98);
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.12));
+}
+
+.hero-header__ka {
+  font-family: var(--font-wedding-heading);
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
