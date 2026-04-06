@@ -13,11 +13,13 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  /* Rompe al ancho del viewport usando el padding de `.invitation` (sin 100vw → sin scroll/recorte horizontal) */
+  width: calc(100% + var(--inv-pad-left) + var(--inv-pad-right));
+  max-width: none;
+  margin-left: calc(-1 * var(--inv-pad-left));
+  margin-right: calc(-1 * var(--inv-pad-right));
   position: relative;
+  overflow-x: clip;
 }
 
 .section1__bleed .inv-card {

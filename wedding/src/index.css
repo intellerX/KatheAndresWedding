@@ -8,6 +8,7 @@
 
 html {
   color-scheme: only light;
+  scroll-padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
 }
 
 /* En escritorio la invitación se ve más grande (equivale ~175% zoom del navegador) */

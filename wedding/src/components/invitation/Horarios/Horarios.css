@@ -30,25 +30,6 @@
   object-fit: cover;
 }
 
-.horarios__placeholder {
-  aspect-ratio: 3 / 4;
-  border-radius: 5px;
-  background:
-    linear-gradient(160deg, rgba(45, 90, 39, 0.1), rgba(253, 245, 230, 0.95)),
-    radial-gradient(circle at 40% 25%, rgba(45, 90, 39, 0.12), transparent 55%);
-  display: grid;
-  place-items: center;
-}
-
-.horarios__placeholder-label {
-  font-family: var(--font-serif);
-  font-size: 0.9rem;
-  color: var(--forest);
-  opacity: 0.6;
-  text-align: center;
-  padding: 0.5rem;
-}
-
 .horarios__content {
   min-width: 0;
 }
@@ -117,8 +98,6 @@
   position: absolute;
   right: -0.25rem;
   bottom: -0.25rem;
-  width: 5.5rem;
-  height: 5.5rem;
   color: var(--forest);
   opacity: 0.32;
   pointer-events: none;
@@ -160,8 +139,8 @@
   }
 
   .horarios__floral {
-    width: 4rem;
-    height: 4rem;
+    width: 10rem;
+    height: 15rem;
     opacity: 0.26;
   }
 }

@@ -7,21 +7,24 @@
 .menu-choice__deco {
   position: absolute;
   pointer-events: none;
-  color: rgba(255, 255, 255, 0.2);
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  opacity: 0.42;
+  filter: drop-shadow(0 1px 8px rgba(0, 0, 0, 0.12));
 }
 
 .menu-choice__deco--tl {
   top: 0.25rem;
   left: 0.15rem;
-  width: 5.5rem;
-  height: 5.5rem;
 }
 
 .menu-choice__deco--br {
   bottom: 0.15rem;
   right: 0.15rem;
-  width: 6rem;
-  height: 6rem;
+  width: 10rem;
+  height: 10rem;
   transform: rotate(12deg);
 }
 

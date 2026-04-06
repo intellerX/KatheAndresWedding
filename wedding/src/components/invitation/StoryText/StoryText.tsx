@@ -8,13 +8,13 @@ type StoryTextProps = {
 const defaultStory = (
   <>
     <p>
-      El amor nos encontró en el momento perfecto, y hoy queremos compartir la alegría de
-      nuestro compromiso con las personas que hacen brillar nuestras vidas.
+        Después de tantos años juntos… ¡por fin nos vamos a casar!
+        Empezamos esta historia siendo muy jóvenes, sin imaginar todo lo que vendría: crecimos, cambiamos, maduramos… y en medio de todo eso, seguimos eligiéndonos (lo cual ya dice bastante 😄).
+        Somos diferentes en muchas cosas (y sí, a veces se nota), pero en el camino aprendimos que ahí está la magia: en complementarnos, equilibrarnos y construir juntos.
     </p>
     <p>
-      Será un honor contar con tu presencia en el día en que uniremos nuestras vidas ante Dios
-      y ante quienes más queremos. Prepárate para una celebración llena de gratitud, música y
-      buenos recuerdos.
+        Hoy queremos celebrar este paso tan importante con las personas que han sido parte de nuestra historia, que nos han acompañado en distintas etapas y que, de una u otra forma, han estado presentes en este camino.
+        Por eso, más que una invitación, es nuestra manera de decir gracias… y de invitarte a estar ahí, celebrando con nosotros este nuevo comienzo.
     </p>
   </>
 )

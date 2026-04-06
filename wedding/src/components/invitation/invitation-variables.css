@@ -26,10 +26,14 @@
 }
 
 .invitation {
+  /* Para `.section1__bleed`: mismo ancho que el viewport sin usar 100vw (evita recorte con overflow-x) */
+  --inv-pad-left: 1rem;
+  --inv-pad-right: 1rem;
+
   max-width: 28rem;
   width: 100%;
   margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
+  padding: 1.5rem var(--inv-pad-right) 3rem var(--inv-pad-left);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -78,8 +82,10 @@
 /* Móvil: más aire útil y tarjetas menos apretadas */
 @media (max-width: 640px) {
   .invitation {
-    padding: 1rem max(0.75rem, env(safe-area-inset-right))
-      max(2.5rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+    --inv-pad-left: max(0.75rem, env(safe-area-inset-left));
+    --inv-pad-right: max(0.75rem, env(safe-area-inset-right));
+    padding: 1rem var(--inv-pad-right) max(3.75rem, env(safe-area-inset-bottom) + 2rem)
+      var(--inv-pad-left);
     gap: 1rem;
   }
 
@@ -90,7 +96,10 @@
 
 @media (max-width: 380px) {
   .invitation {
-    padding-inline: max(0.65rem, env(safe-area-inset-left)) max(0.65rem, env(safe-area-inset-right));
+    --inv-pad-left: max(0.65rem, env(safe-area-inset-left));
+    --inv-pad-right: max(0.65rem, env(safe-area-inset-right));
+    padding-left: var(--inv-pad-left);
+    padding-right: var(--inv-pad-right);
   }
 }
 

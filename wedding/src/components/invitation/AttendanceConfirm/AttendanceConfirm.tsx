@@ -1,4 +1,6 @@
-import { FormEvent, useState } from 'react'
+import { type FormEvent, useState } from 'react'
+import florVerdeTl from '../../../assets/props/florVerde3.png'
+import florVerdeBr from '../../../assets/props/florVerde4.png'
 import './AttendanceConfirm.css'
 
 export type AttendanceValue = 'all' | 'partial' | 'none'
@@ -11,19 +13,6 @@ export type AttendancePayload = {
 
 export type AttendanceConfirmProps = {
   onSubmit?: (data: AttendancePayload) => void
-}
-
-function DecoOrchid({ className }: { className: string }) {
-  return (
-    <svg className={className} viewBox="0 0 100 100" aria-hidden>
-      <g fill="none" stroke="currentColor" strokeWidth="1.05" strokeLinecap="round">
-        <path d="M50 92V48M50 48c-12-8-10-24 4-30s22 2 26 16c-8-8-18-10-30 14z" />
-        <path d="M28 62c6-10 16-16 28-16M72 62c-6-10-16-16-28-16" opacity="0.65" />
-        <circle cx="42" cy="38" r="5" />
-        <circle cx="58" cy="38" r="5" />
-      </g>
-    </svg>
-  )
 }
 
 const attendanceOptions: { value: AttendanceValue; label: string }[] = [
@@ -59,8 +48,20 @@ export function AttendanceConfirm({ onSubmit }: AttendanceConfirmProps) {
       className="inv-card inv-card--cream attendance"
       aria-labelledby="attendance-title"
     >
-      <DecoOrchid className="attendance__deco attendance__deco--tl" />
-      <DecoOrchid className="attendance__deco attendance__deco--br" />
+      <img
+        className="attendance__deco attendance__deco--tl"
+        src={florVerdeTl}
+        alt=""
+        aria-hidden
+        decoding="async"
+      />
+      <img
+        className="attendance__deco attendance__deco--br"
+        src={florVerdeBr}
+        alt=""
+        aria-hidden
+        decoding="async"
+      />
 
       <h2 id="attendance-title" className="attendance__title">
         Confirmación de asistencia

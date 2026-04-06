@@ -1,3 +1,5 @@
+import florVerdeDress from '../../../assets/props/florVerde3.png'
+import florVerde2 from '../../../assets/props/florVerde4.png'
 import './Preguntas.css'
 
 function IconClock() {
@@ -55,27 +57,26 @@ function IconParking() {
 
 function IllustrationDressCode() {
   return (
-    <svg className="preguntas__icon preguntas__icon--wide" viewBox="0 0 120 80" aria-hidden>
-      <g fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
-        <path d="M60 72V38" opacity="0.85" />
-        <path d="M60 38c-7-10-3.5-18 5.5-21s15.5 3.5 17.5 12" />
-        <circle cx="52" cy="58" r="4" />
-        <circle cx="60" cy="32" r="5" />
-        <circle cx="68" cy="58" r="4" />
-      </g>
-    </svg>
+    <img
+      className="preguntas__dress-flor"
+      src={florVerdeDress}
+      alt=""
+      aria-hidden
+      decoding="async"
+    />
   )
 }
 
 function IllustrationGift() {
   return (
-    <svg className="preguntas__icon preguntas__icon--tall" viewBox="0 0 80 96" aria-hidden>
-      <g fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
-        <path d="M40 84V26" opacity="0.85" />
-        <path d="M40 26c-5-8-2-16 6.5-19.5s14.5 1.5 17.5 9.5" />
-        <ellipse cx="40" cy="44" rx="11" ry="18" opacity="0.3" />
-      </g>
-    </svg>
+    <img
+      className="preguntas__gift-flor"
+      src={florVerde2}
+      alt=""
+      aria-hidden
+      decoding="async"
+    />
+    
   )
 }
 

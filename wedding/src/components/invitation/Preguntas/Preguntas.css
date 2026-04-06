@@ -85,6 +85,31 @@
   margin-top: 0;
 }
 
+/* Misma escala que el icono ancho anterior; PNG no usa stroke currentColor */
+.preguntas__dress-flor {
+  flex-shrink: 0;
+  display: block;
+  width: 4.25rem;
+  height: auto;
+  max-height: 3.25rem;
+  margin-top: 0;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: drop-shadow(0 1px 4px rgba(61, 92, 69, 0.14));
+}
+
+.preguntas__gift-flor {
+  flex-shrink: 0;
+  display: block;
+  width: 3.75rem;
+  height: auto;
+  max-height: 2.75rem;
+  margin-top: 0;
+  object-fit: contain;
+  opacity: 0.88;
+  filter: drop-shadow(0 1px 4px rgba(61, 92, 69, 0.14));
+}
+
 .preguntas__icon--tall {
   width: 3rem;
   height: 3.5rem;

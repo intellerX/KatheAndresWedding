@@ -1,3 +1,5 @@
+import defaultHorariosPhoto from '../../../assets/Horarios.jpeg'
+import florVerdeTl from '../../../assets/props/florVerde3.png'
 import './Horarios.css'
 
 export type HorarioItem = {
@@ -13,6 +15,7 @@ const defaultItems: HorarioItem[] = [
 ]
 
 type HorariosProps = {
+  /** Sustituye la imagen por defecto (`Horarios.jpeg`) */
   photoSrc?: string
   photoAlt?: string
   dateLine?: string
@@ -20,31 +23,25 @@ type HorariosProps = {
 }
 
 export function Horarios({
-  photoSrc,
+  photoSrc = defaultHorariosPhoto,
   photoAlt = 'Kathe y Andres',
   dateLine = 'Junio 06 · 2026',
   items = defaultItems,
 }: HorariosProps) {
   return (
     <section className="inv-card inv-card--cream horarios" aria-labelledby="horarios-heading">
-      <svg className="horarios__floral" viewBox="0 0 120 120" aria-hidden>
-        <g fill="none" stroke="currentColor" strokeWidth="1.05" strokeLinecap="round">
-          <path d="M88 104c-10-14-8-32 4-44 10 10 26 12 40 6-12 14-18 32-16 50-10-8-22-12-36-12z" />
-          <path d="M96 72c-18 4-36-2-48-16M72 112c4-18 16-32 32-40" />
-          <circle cx="92" cy="96" r="2.5" fill="currentColor" stroke="none" />
-        </g>
-      </svg>
+      <img
+        className="horarios__floral"
+        src={florVerdeTl}
+        alt=""
+        aria-hidden
+        decoding="async"
+      />
 
       <div className="horarios__grid">
         <figure className="horarios__photo">
           <div className="horarios__frame">
-            {photoSrc ? (
-              <img className="horarios__img" src={photoSrc} alt={photoAlt} loading="lazy" />
-            ) : (
-              <div className="horarios__placeholder" role="img" aria-label={photoAlt}>
-                <span className="horarios__placeholder-label">Foto de la pareja</span>
-              </div>
-            )}
+            <img className="horarios__img" src={photoSrc} alt={photoAlt} loading="lazy" />
           </div>
         </figure>
 

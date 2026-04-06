@@ -1,8 +1,11 @@
 .hero-header {
   position: relative;
+  isolation: isolate;
   text-align: center;
   padding: 2.15rem 1.25rem 2.35rem;
-  /* Capa base = mismo verde que .inv-card--forest; brillo encima (sin transparencia al fondo de la página) */
+  --hero-flor-l: none;
+  --hero-flor-r: none;
+  /* Capa base = mismo verde que .inv-card--forest; brillo encima */
   background:
     radial-gradient(
       ellipse 120% 80% at 50% 0%,
@@ -12,25 +15,65 @@
     linear-gradient(165deg, var(--forest) 0%, var(--forest-deep) 100%);
 }
 
-.hero-header__floral {
+/* Capa decorativa encima del fondo (los pseudo-elementos sí quedan sobre el gradiente opaco) */
+.hero-header::before,
+.hero-header::after {
+  content: '';
   position: absolute;
-  width: 6.75rem;
-  height: 6.75rem;
-  opacity: 0.26;
-  color: inherit;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  opacity: 0.48;
+  filter: brightness(1.18) drop-shadow(0 6px 22px rgba(0, 0, 0, 0.22));
 }
 
-.hero-header__floral--tl {
-  top: 0.2rem;
-  left: 0.15rem;
+/* Móvil: tamaño moderado + anclaje hacia los bordes exteriores (evita solaparse al centro) */
+.hero-header::before {
+  left: 0;
+  background-image: var(--hero-flor-l);
+  background-position: left -500% top 6%;
+  background-size: min(46vw, 11rem) auto;
 }
 
-.hero-header__floral--br {
-  bottom: 0.15rem;
-  right: 0.15rem;
+.hero-header::after {
+  right: 0;
+  left: auto;
+  background-image: var(--hero-flor-r);
+  background-position: right -400% top 6%;
+  background-size: min(46vw, 11rem) auto;
+}
+
+/* Tablet / escritorio: acercar las flores al centro (anclaje hacia la línea media) */
+@media (min-width: 641px) {
+  .hero-header::before {
+    background-position: right 100% top 5%;
+    background-size: min(36vw, 17rem) auto;
+  }
+
+  .hero-header::after {
+    background-position: left 75% top 5%;
+    background-size: min(36vw, 17rem) auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-header::before {
+    background-position: right 50% top 4%;
+    background-size: min(32vw, 20rem) auto;
+  }
+
+  .hero-header::after {
+    background-position: left 40% top 4%;
+    background-size: min(32vw, 20rem) auto;
+  }
 }
 
 .hero-header__date {
+  position: relative;
+  z-index: 2;
   margin: 0 0 1.35rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 252, 248, 0.18);
@@ -50,20 +93,16 @@
 }
 
 .hero-header__monogram {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
 }
 
-.hero-header__wreath {
+.hero-header__logo {
+  display: block;
   width: min(13.5rem, 70vw);
   height: auto;
-  color: rgba(255, 252, 248, 0.98);
+  object-fit: contain;
   filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.12));
-}
-
-.hero-header__ka {
-  font-family: var(--font-wedding-heading);
-  font-size: 56px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
 }
