@@ -3,7 +3,6 @@ import {
   CeremonyCard,
   Horarios,
   LocationHeader,
-  MenuChoice,
   Preguntas,
   ReceptionCard,
   Section1,
@@ -24,7 +23,6 @@ function App() {
       </div>
       <Horarios />
       <Preguntas />
-      <MenuChoice />
       <AttendanceConfirm />
     </main>
   )

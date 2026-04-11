@@ -10,7 +10,7 @@ export type { HorarioItem } from './Horarios/Horarios'
 export { Preguntas } from './Preguntas/Preguntas'
 export type { PreguntasProps } from './Preguntas/Preguntas'
 export { MenuChoice } from './MenuChoice/MenuChoice'
-export type { MenuChoiceProps, MenuChoiceValue } from './MenuChoice/MenuChoice'
+export type { MenuChoiceProps } from './MenuChoice/MenuChoice'
 export { AttendanceConfirm } from './AttendanceConfirm/AttendanceConfirm'
 export type {
   AttendanceConfirmProps,

@@ -9,6 +9,8 @@
 html {
   color-scheme: only light;
   scroll-padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 /* En escritorio la invitación se ve más grande (equivale ~175% zoom del navegador) */
@@ -27,10 +29,11 @@ body {
 
 #root {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   margin: 0 auto;
   min-height: 100svh;
   border: none;
   text-align: initial;
   display: block;
+  overflow-x: clip;
 }

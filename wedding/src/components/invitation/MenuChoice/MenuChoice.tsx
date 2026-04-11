@@ -1,25 +1,35 @@
-import { type FormEvent, useState } from 'react'
 import florVerdeTl from '../../../assets/props/florVerde3.png'
 import florBlancaTl from '../../../assets/props/florBlanca2.png'
 import './MenuChoice.css'
 
-export type MenuChoiceValue = 'traditional' | 'vegan'
-
 export type MenuChoiceProps = {
-  /** Se dispara al enviar con la opción elegida (conectar a tu backend o servicio) */
-  onSubmit?: (choice: MenuChoiceValue) => void
+  /** Invitados en la tarjeta (desde `?number=` en la URL, mínimo 1). */
+  partySize: number
+  menuTraditional: number
+  menuVegan: number
+  onMenuTraditionalChange: (value: number) => void
+  onMenuVeganChange: (value: number) => void
+  /** Si es false, no se marca error de suma (p. ej. asistencia «no» aún no definida). */
+  sumEnforced?: boolean
 }
 
-export function MenuChoice({ onSubmit }: MenuChoiceProps) {
-  const [choice, setChoice] = useState<MenuChoiceValue | null>(null)
-  const [sent, setSent] = useState(false)
+function clampCount(value: string, max: number): number {
+  const n = Number.parseInt(value, 10)
+  if (Number.isNaN(n)) return 0
+  return Math.max(0, Math.min(max, n))
+}
 
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault()
-    if (!choice) return
-    onSubmit?.(choice)
-    setSent(true)
-  }
+export function MenuChoice({
+  partySize,
+  menuTraditional,
+  menuVegan,
+  onMenuTraditionalChange,
+  onMenuVeganChange,
+  sumEnforced = true,
+}: MenuChoiceProps) {
+  const plural = partySize > 1
+  const sum = menuTraditional + menuVegan
+  const sumOk = !sumEnforced || sum === partySize
 
   return (
     <section className="inv-card inv-card--forest menu-choice" aria-labelledby="menu-choice-title">
@@ -44,46 +54,71 @@ export function MenuChoice({ onSubmit }: MenuChoiceProps) {
 
       <p className="menu-choice__intro">
         Queremos que todos nuestros invitados se sientan cómodos y disfruten al máximo este día.
-        Por eso hemos pensado en opciones para todos los gustos: puedes elegir entre menú tradicional
-        o menú vegano, para que cada uno tenga su plato ideal y disfrute la celebración tanto como
-        nosotros.
+        Por eso hemos pensado en opciones para todos los gustos: indica cuántos menús tradicionales y
+        cuántos veganos corresponden a los invitados de esta tarjeta (la suma debe coincidir con el
+        número de lugares reservados).
       </p>
 
-      <h3 className="menu-choice__form-title">¿Qué quieres comer?</h3>
+      <h3 className="menu-choice__form-title">
+        {plural ? '¿Qué quieren comer?' : '¿Qué quieres comer?'}
+      </h3>
 
-      <form className="menu-choice__form" onSubmit={handleSubmit}>
-        <input type="hidden" name="menu" value={choice ?? ''} />
-
-        <div className="menu-choice__options" role="group" aria-label="Tipo de menú">
-          <button
-            type="button"
-            className={`menu-choice__option ${choice === 'traditional' ? 'menu-choice__option--selected' : ''}`}
-            onClick={() => setChoice('traditional')}
-            aria-pressed={choice === 'traditional'}
-          >
+      <div className="menu-choice__counts" role="group" aria-label="Cantidad por tipo de menú">
+        <div className="menu-choice__count-row">
+          <label className="menu-choice__count-label" htmlFor="menu-traditional">
             Menú tradicional
-          </button>
-          <button
-            type="button"
-            className={`menu-choice__option ${choice === 'vegan' ? 'menu-choice__option--selected' : ''}`}
-            onClick={() => setChoice('vegan')}
-            aria-pressed={choice === 'vegan'}
-          >
-            Menú vegano
-          </button>
+          </label>
+          <input
+            id="menu-traditional"
+            name="menu_traditional"
+            className="menu-choice__count-input"
+            type="number"
+            inputMode="numeric"
+            min={0}
+            max={partySize}
+            value={menuTraditional}
+            onChange={(e) => onMenuTraditionalChange(clampCount(e.target.value, partySize))}
+            aria-invalid={sumEnforced && !sumOk}
+          />
         </div>
+        <div className="menu-choice__count-row">
+          <label className="menu-choice__count-label" htmlFor="menu-vegan">
+            Menú vegano
+          </label>
+          <input
+            id="menu-vegan"
+            name="menu_vegan"
+            className="menu-choice__count-input"
+            type="number"
+            inputMode="numeric"
+            min={0}
+            max={partySize}
+            value={menuVegan}
+            onChange={(e) => onMenuVeganChange(clampCount(e.target.value, partySize))}
+            aria-invalid={sumEnforced && !sumOk}
+          />
+        </div>
+      </div>
 
-        <button type="submit" className="menu-choice__submit" disabled={!choice || sent}>
-          {sent ? 'Elección registrada' : 'Confirmar menú'}
-        </button>
+      <p
+        className={
+          !sumEnforced
+            ? 'menu-choice__sum-hint menu-choice__sum-hint--muted'
+            : sumOk
+              ? 'menu-choice__sum-hint menu-choice__sum-hint--ok'
+              : 'menu-choice__sum-hint menu-choice__sum-hint--warn'
+        }
+      >
+        {!sumEnforced
+          ? 'Si indican que no asistirán, el reparto de menús no aplica en la confirmación.'
+          : sumOk
+            ? `${menuTraditional} tradicional + ${menuVegan} vegano = ${partySize} ${plural ? 'invitados' : 'invitado'}.`
+            : `Suma: ${sum} de ${partySize}. Revisa los números.`}
+      </p>
 
-        {sent && (
-          <p className="menu-choice__status" role="status">
-            ¡Gracias! Hemos guardado tu preferencia.
-          </p>
-        )}
-      </form>
-
+      <p className="menu-choice__footer">
+        La confirmación final se envía con el botón «Confirmar» de la sección siguiente.
+      </p>
     </section>
   )
 }

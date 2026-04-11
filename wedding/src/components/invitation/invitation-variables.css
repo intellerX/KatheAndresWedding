@@ -26,7 +26,7 @@
 }
 
 .invitation {
-  /* Para `.section1__bleed`: mismo ancho que el viewport sin usar 100vw (evita recorte con overflow-x) */
+  /* Padding horizontal (safe area en móvil); el bleed del héroe usa ancho viewport aparte */
   --inv-pad-left: 1rem;
   --inv-pad-right: 1rem;
 

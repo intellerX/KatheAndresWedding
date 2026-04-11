@@ -30,11 +30,11 @@
   filter: brightness(1.18) drop-shadow(0 6px 22px rgba(0, 0, 0, 0.22));
 }
 
-/* Móvil: tamaño moderado + anclaje hacia los bordes exteriores (evita solaparse al centro) */
+/* Móvil: flores hacia los bordes del header, sin desbordar */
 .hero-header::before {
   left: 0;
   background-image: var(--hero-flor-l);
-  background-position: left -500% top 6%;
+  background-position: left -4% top 6%;
   background-size: min(46vw, 11rem) auto;
 }
 
@@ -42,31 +42,31 @@
   right: 0;
   left: auto;
   background-image: var(--hero-flor-r);
-  background-position: right -400% top 6%;
+  background-position: right -4% top 6%;
   background-size: min(46vw, 11rem) auto;
 }
 
-/* Tablet / escritorio: acercar las flores al centro (anclaje hacia la línea media) */
+/* Tablet / escritorio: acercar las flores al centro */
 @media (min-width: 641px) {
   .hero-header::before {
-    background-position: right 100% top 5%;
+    background-position: right 4% top 5%;
     background-size: min(36vw, 17rem) auto;
   }
 
   .hero-header::after {
-    background-position: left 75% top 5%;
+    background-position: left 4% top 5%;
     background-size: min(36vw, 17rem) auto;
   }
 }
 
 @media (min-width: 900px) {
   .hero-header::before {
-    background-position: right 50% top 4%;
+    background-position: right 14% top 4%;
     background-size: min(32vw, 20rem) auto;
   }
 
   .hero-header::after {
-    background-position: left 40% top 4%;
+    background-position: left 14% top 4%;
     background-size: min(32vw, 20rem) auto;
   }
 }

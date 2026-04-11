@@ -13,4 +13,6 @@ function viteBase(): string {
 export default defineConfig({
   plugins: [react()],
   base: viteBase(),
+  /** Permite copiar nombres tipo Next (`NEXT_PUBLIC_*`) desde la doc de Supabase. */
+  envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
 })

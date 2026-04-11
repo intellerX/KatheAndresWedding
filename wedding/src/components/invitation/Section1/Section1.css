@@ -3,23 +3,38 @@
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  width: 100%;
+  min-width: 0;
 }
 
 /**
- * KA + nombres: ancho completo del viewport, sin aspecto de tarjeta
- * (sin redondeo ni sombra). Rompe el max-width de `.invitation`.
+ * Sangrado a todo el ancho del viewport en todos los tamaños (sin transform).
+ * Patrón: width = viewport + margin-inline = calc(50% - mitad viewport) en cada lado;
+ * el 50% es respecto al ancho de .section1 (columna .invitation), así queda centrado en pantalla.
+ * 100dvw reduce desajustes con barra de scroll; fallback 100svw / 100vw.
  */
 .section1__bleed {
   display: flex;
   flex-direction: column;
   gap: 0;
-  /* Rompe al ancho del viewport usando el padding de `.invitation` (sin 100vw → sin scroll/recorte horizontal) */
-  width: calc(100% + var(--inv-pad-left) + var(--inv-pad-right));
-  max-width: none;
-  margin-left: calc(-1 * var(--inv-pad-left));
-  margin-right: calc(-1 * var(--inv-pad-right));
   position: relative;
+  left: auto;
+  transform: none;
+  box-sizing: border-box;
   overflow-x: clip;
+
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+@supports (width: 100dvw) {
+  .section1__bleed {
+    width: 100dvw;
+    margin-left: calc(50% - 50dvw);
+    margin-right: calc(50% - 50dvw);
+  }
 }
 
 .section1__bleed .inv-card {

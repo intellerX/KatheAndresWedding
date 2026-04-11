@@ -1,3 +1,14 @@
+/* Un solo envío: bloque menú (arriba) + confirmación (abajo) */
+.invitation-rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
 .attendance {
   position: relative;
   padding: 1.85rem 1.25rem 2rem;
@@ -77,6 +88,21 @@
   margin: 0;
   padding: 0;
   border: none;
+}
+
+.attendance__fieldset--guests {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.attendance__names-hint {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #8b3a2a;
+  line-height: 1.45;
 }
 
 .attendance__legend {
@@ -250,4 +276,166 @@
   .attendance__panel {
     padding: 1.05rem 0.8rem 1.25rem;
   }
+}
+
+/* Modal tras envío (éxito con check animado / error) */
+.rsvp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(26, 26, 24, 0.45);
+  backdrop-filter: blur(3px);
+  animation: rsvp-backdrop-in 0.2s ease;
+}
+
+@keyframes rsvp-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.rsvp-modal {
+  width: min(100%, 22rem);
+  padding: 1.75rem 1.35rem 1.5rem;
+  border-radius: 16px;
+  background: #fffefb;
+  border: 1px solid var(--gold-muted);
+  box-shadow: 0 24px 56px -24px rgba(45, 90, 39, 0.4);
+  text-align: center;
+  animation: rsvp-modal-in 0.38s cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+
+@keyframes rsvp-modal-in {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.rsvp-modal__icon-wrap {
+  margin-bottom: 0.85rem;
+}
+
+.rsvp-modal__success-ring {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--forest);
+  display: grid;
+  place-items: center;
+  animation: rsvp-success-pop 0.52s cubic-bezier(0.34, 1.5, 0.64, 1) forwards;
+  transform: scale(0);
+}
+
+@keyframes rsvp-success-pop {
+  to {
+    transform: scale(1);
+  }
+}
+
+.rsvp-modal__success-check {
+  display: block;
+  width: 12px;
+  height: 22px;
+  margin-top: -5px;
+  margin-left: 2px;
+  border: solid #fffefb;
+  border-width: 0 3px 3px 0;
+  border-radius: 0 0 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  animation: rsvp-check-draw 0.32s ease 0.3s forwards;
+}
+
+@keyframes rsvp-check-draw {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+.rsvp-modal__icon-wrap--error {
+  margin-bottom: 1rem;
+}
+
+.rsvp-modal__error-mark {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: rgba(180, 60, 50, 0.1);
+  border: 2px solid rgba(180, 60, 50, 0.42);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-sans);
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #a83228;
+}
+
+.rsvp-modal__title {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 4vw, 1.65rem);
+  font-weight: 400;
+  color: var(--forest);
+}
+
+.rsvp-modal__text {
+  margin: 0 0 1.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.92;
+}
+
+.rsvp-modal__text--error {
+  color: #6b221c;
+  text-align: left;
+  word-break: break-word;
+}
+
+.rsvp-modal__btn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--gold);
+  color: var(--forest-deep);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.rsvp-modal__btn:hover {
+  background: var(--gold-hover);
+}
+
+.rsvp-modal--error .rsvp-modal__btn {
+  background: var(--forest);
+  color: #fffefb;
+}
+
+.rsvp-modal--error .rsvp-modal__btn:hover {
+  filter: brightness(1.06);
 }
