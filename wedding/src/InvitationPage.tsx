@@ -1,7 +1,6 @@
 import {
   AttendanceConfirm,
   CeremonyCard,
-  DressCodeTeaserCard,
   Horarios,
   LocationHeader,
   PostEventPhotosTeaserCard,
@@ -26,7 +25,6 @@ export function InvitationPage() {
       <Horarios />
       <Preguntas />
       <AttendanceConfirm />
-      <DressCodeTeaserCard />
       <PostEventPhotosTeaserCard />
     </main>
   )

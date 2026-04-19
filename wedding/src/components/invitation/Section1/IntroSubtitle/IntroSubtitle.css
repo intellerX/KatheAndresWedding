@@ -16,9 +16,19 @@
   font-feature-settings: 'kern' 1, 'liga' 1;
 }
 
-.intro-card__text::before,
+.intro-card__text::before {
+  content: '❧';
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 0.65em;
+  opacity: 0.45;
+  margin: 0 0.4em;
+}
+
+
 .intro-card__text::after {
   content: '❧';
+  transform: rotate(180deg);
   display: inline-block;
   font-family: var(--font-serif);
   font-size: 0.65em;

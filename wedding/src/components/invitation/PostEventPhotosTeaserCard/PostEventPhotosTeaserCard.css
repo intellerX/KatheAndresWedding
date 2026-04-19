@@ -14,49 +14,14 @@
 .post-event-photos-teaser__lead {
   margin: 0 0 1rem;
   font-family: var(--font-reading);
-  font-size: 0.98rem;
-  line-height: 1.55;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
   color: var(--ink);
   opacity: 0.92;
   text-wrap: pretty;
 }
 
 .post-event-photos-teaser__cta-wrap {
-  margin: 0;
-  font-family: var(--font-reading);
-  font-size: 0.98rem;
-  line-height: 1.5;
-  color: var(--ink);
-  opacity: 0.9;
-}
-
-.post-event-photos-teaser__cta {
-  display: inline;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--forest);
-  border-bottom: 2px solid var(--gold-muted);
-  padding-bottom: 0.05rem;
-  transition:
-    color 0.15s ease,
-    border-color 0.15s ease;
-}
-
-.post-event-photos-teaser__cta:hover {
-  color: var(--forest-deep);
-  border-bottom-color: var(--gold);
-}
-
-.post-event-photos-teaser__cta:focus-visible {
-  outline: 2px solid var(--forest);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-.post-event-photos-teaser__cta-hint {
-  font-size: 0.95rem;
+  margin-top: 0.15rem;
 }

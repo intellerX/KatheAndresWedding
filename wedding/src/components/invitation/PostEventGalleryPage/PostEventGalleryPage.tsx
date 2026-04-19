@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useInvitationLinkTo } from '../../../hooks/useInvitationLinkTo'
 import './PostEventGalleryPage.css'
 
 const SKELETON_LAYOUT = [
@@ -18,6 +19,8 @@ const SKELETON_LAYOUT = [
 ] as const
 
 export function PostEventGalleryPage() {
+  const invitationTo = useInvitationLinkTo('/')
+
   useEffect(() => {
     const prev = document.title
     document.title = 'Galería — Kathe & Andres'
@@ -29,7 +32,7 @@ export function PostEventGalleryPage() {
   return (
     <main className="invitation post-gallery-page">
       <header className="post-gallery-page__header">
-        <Link className="post-gallery-page__back" to="/">
+        <Link className="post-gallery-page__back" to={invitationTo}>
           ← Volver a la invitación
         </Link>
         <h1 className="post-gallery-page__title">Galería de fotos</h1>

@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom'
+import { useInvitationLinkTo } from '../../../hooks/useInvitationLinkTo'
 import florVerdeDress from '../../../assets/props/florVerde3.png'
 import florVerde2 from '../../../assets/props/florVerde4.png'
 import './Preguntas.css'
+import { DRESS_CODE_GALLERY_PATH } from '../AttendanceConfirm/postEventGalleryPath'
 
 function IconClock() {
   return (
@@ -76,16 +79,13 @@ function IllustrationGift() {
       aria-hidden
       decoding="async"
     />
-    
+
   )
 }
 
-export type PreguntasProps = {
-  /** Enlace al tablero de Pinterest con ideas de vestuario */
-  pinterestBoardUrl?: string
-}
+export function Preguntas() {
+  const vestimentaTo = useInvitationLinkTo(DRESS_CODE_GALLERY_PATH)
 
-export function Preguntas({ pinterestBoardUrl }: PreguntasProps) {
   return (
     <section
       className="inv-card inv-card--cream preguntas"
@@ -142,42 +142,6 @@ export function Preguntas({ pinterestBoardUrl }: PreguntasProps) {
           </div>
         </article>
 
-        {/* Sección actual — estilo y regalos */}
-        <article className="preguntas__item preguntas__item--illustration">
-          <header className="preguntas__head preguntas__head--illustration">
-            <IllustrationDressCode />
-            <h3 className="preguntas__question">¿Cuál es el dress code?</h3>
-          </header>
-          <div className="preguntas__answer">
-            <p>
-              Nuestra ceremonia será al aire libre, así que queremos que estés fresco, cómodo y con
-              estilo 🌿✨ Nada de trajes rígidos o súper formales que te hagan sudar; piensa en algo
-              elegante pero relajado, que combine con el entorno natural.
-            </p>
-            <p>
-              Para inspirarte, puedes buscar en Pinterest «formal garden party» y ver ideas de looks
-              ligeros, elegantes y cómodos para este tipo de celebración 💐 Además, te compartimos
-              este tablero con referencias del estilo que buscamos
-              {pinterestBoardUrl ? (
-                <>
-                  :{' '}
-                  <a
-                    href={pinterestBoardUrl}
-                    className="preguntas__link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    tablero en Pinterest
-                  </a>
-                  .
-                </>
-              ) : (
-                <> (pronto compartiremos el enlace).</>
-              )}
-            </p>
-          </div>
-        </article>
-
         <article className="preguntas__item preguntas__item--illustration preguntas__item--last">
           <header className="preguntas__head preguntas__head--illustration">
             <IllustrationGift />
@@ -194,6 +158,37 @@ export function Preguntas({ pinterestBoardUrl }: PreguntasProps) {
             </p>
           </div>
         </article>
+
+        {/* Sección actual — estilo y regalos */}
+        <article className="preguntas__item preguntas__item--illustration">
+          <header className="preguntas__head preguntas__head--illustration">
+            <IllustrationDressCode />
+            <h3 className="preguntas__question">¿Cuál es el dress code?</h3>
+          </header>
+          <div className="preguntas__answer">
+            <p>
+              Nuestra ceremonia será al aire libre, así que queremos que estés fresco, cómodo y con
+              estilo 🌿✨piensa en algo
+              elegante pero relajado, que combine con el entorno natural.
+            </p>
+            <p>
+              Para inspirarte, puedes buscar en Pinterest «formal garden party».
+            </p>
+          </div>
+          
+          <p className="dress-code-teaser__lead">
+            Además preparamos una galería. Es solo una guía visual, no una lista cerrada.
+          </p>
+
+          <p className="inv-teaser-cta-wrap inv-teaser-cta-wrap--center">
+            <Link className="inv-teaser-cta" to={vestimentaTo}>
+              Clic aquí <span className="inv-teaser-cta-hint">👗</span>
+            </Link>
+            <br />
+            <span className="inv-teaser-cta-hint"> ver la galería de inspiración.</span>
+          </p>
+        </article>
+
       </div>
     </section>
   )

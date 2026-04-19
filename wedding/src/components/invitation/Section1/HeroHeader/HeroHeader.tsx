@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import florBlancaIzq from '../../../../assets/props/florBlanca5.png'
-import florBlancaDer from '../../../../assets/props/florBlanca5.png'
+import florBlancaDer from '../../../../assets/props/florBlanca5r.png'
 import logoUrl from '../../../../assets/props/logo.png'
 import './HeroHeader.css'
 

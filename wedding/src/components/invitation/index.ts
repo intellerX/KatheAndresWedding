@@ -8,7 +8,6 @@ export { ReceptionCard } from './ReceptionCard/ReceptionCard'
 export { Horarios } from './Horarios/Horarios'
 export type { HorarioItem } from './Horarios/Horarios'
 export { Preguntas } from './Preguntas/Preguntas'
-export type { PreguntasProps } from './Preguntas/Preguntas'
 export { MenuChoice } from './MenuChoice/MenuChoice'
 export type { MenuChoiceProps } from './MenuChoice/MenuChoice'
 export { AttendanceConfirm } from './AttendanceConfirm/AttendanceConfirm'
@@ -17,5 +16,4 @@ export type {
   AttendancePayload,
   AttendanceValue,
 } from './AttendanceConfirm/AttendanceConfirm'
-export { DressCodeTeaserCard } from './DressCodeTeaserCard/DressCodeTeaserCard'
 export { PostEventPhotosTeaserCard } from './PostEventPhotosTeaserCard/PostEventPhotosTeaserCard'

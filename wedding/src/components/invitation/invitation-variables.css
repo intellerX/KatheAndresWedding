@@ -169,3 +169,54 @@
   flex-shrink: 0;
   opacity: 0.9;
 }
+
+/* “Clic aquí” en teasers (dress code / fotos): misma tipografía que el cuerpo, sin versalitas */
+.inv-teaser-cta-wrap {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  opacity: 0.92;
+  text-wrap: pretty;
+}
+
+.inv-teaser-cta-wrap--center {
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.inv-teaser-cta {
+  display: inline;
+  font-family: var(--font-reading);
+  font-weight: 600;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-decoration: none;
+  color: var(--forest);
+  border-bottom: 2px solid var(--gold-muted);
+  padding-bottom: 0.06rem;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.inv-teaser-cta:hover {
+  color: var(--forest-deep);
+  border-bottom-color: var(--gold);
+}
+
+.inv-teaser-cta:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.inv-teaser-cta-hint {
+  font-weight: 400;
+  font-size: inherit;
+}

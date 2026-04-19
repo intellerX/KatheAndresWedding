@@ -34,7 +34,7 @@
 .hero-header::before {
   left: 0;
   background-image: var(--hero-flor-l);
-  background-position: left -4% top 6%;
+  background-position: left -120% top -10%;
   background-size: min(46vw, 11rem) auto;
 }
 
@@ -42,7 +42,7 @@
   right: 0;
   left: auto;
   background-image: var(--hero-flor-r);
-  background-position: right -4% top 6%;
+  background-position: right -120% top -10%;
   background-size: min(46vw, 11rem) auto;
 }
 
@@ -61,12 +61,12 @@
 
 @media (min-width: 900px) {
   .hero-header::before {
-    background-position: right 14% top 4%;
+    background-position: right 40% top 4%;
     background-size: min(32vw, 20rem) auto;
   }
 
   .hero-header::after {
-    background-position: left 14% top 4%;
+    background-position: left 40% top 4%;
     background-size: min(32vw, 20rem) auto;
   }
 }

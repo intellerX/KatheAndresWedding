@@ -1,9 +1,12 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useInvitationLinkTo } from '../../../hooks/useInvitationLinkTo'
 import { DRESS_CODE_IMAGES } from './dressCodeImages'
 import './DressCodeGalleryPage.css'
 
 export function DressCodeGalleryPage() {
+  const invitationTo = useInvitationLinkTo('/')
+
   useEffect(() => {
     const prev = document.title
     document.title = 'Vestimenta — Kathe & Andres'
@@ -15,7 +18,7 @@ export function DressCodeGalleryPage() {
   return (
     <main className="invitation dress-code-page">
       <header className="dress-code-page__header">
-        <Link className="dress-code-page__back" to="/">
+        <Link className="dress-code-page__back" to={invitationTo}>
           ← Volver a la invitación
         </Link>
         <h1 className="dress-code-page__title">Código de vestimenta</h1>
