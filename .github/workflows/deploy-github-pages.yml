@@ -36,8 +36,9 @@ jobs:
         run: npm run build
         working-directory: wedding
         env:
-          # Subruta del sitio: https://<usuario>.github.io/<nombre-del-repo>/
-          VITE_BASE: /${{ github.event.repository.name }}/
+          # Dominio personalizado: base en raíz (/). Para probar en https://<usuario>.github.io/<repo>/,
+          # crea variable de Actions VITE_BASE (p. ej. /KatheAndresWedding/) en Settings → Secrets and variables → Actions → Variables.
+          VITE_BASE: ${{ vars.VITE_BASE || '/' }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
