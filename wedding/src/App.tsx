@@ -1,31 +1,23 @@
-import {
-  AttendanceConfirm,
-  CeremonyCard,
-  Horarios,
-  LocationHeader,
-  Preguntas,
-  ReceptionCard,
-  Section1,
-  StoryPhoto,
-  StoryText,
-} from './components/invitation'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { InvitationPage } from './InvitationPage'
+import { PostEventGalleryPage } from './components/invitation/PostEventGalleryPage/PostEventGalleryPage'
+import { POST_EVENT_GALLERY_PATH } from './components/invitation/AttendanceConfirm/postEventGalleryPath'
 
-function App() {
-  return (
-    <main className="invitation">
-      <Section1 />
-      <StoryPhoto />
-      <StoryText />
-      <LocationHeader />
-      <div className="location-row">
-        <CeremonyCard />
-        <ReceptionCard />
-      </div>
-      <Horarios />
-      <Preguntas />
-      <AttendanceConfirm />
-    </main>
-  )
+function routerBasename(): string | undefined {
+  const base = import.meta.env?.BASE
+  if (typeof base !== 'string' || base === '' || base === '/') {
+    return undefined
+  }
+  return base.endsWith('/') ? base.slice(0, -1) : base
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter basename={routerBasename()}>
+      <Routes>
+        <Route path="/" element={<InvitationPage />} />
+        <Route path={POST_EVENT_GALLERY_PATH} element={<PostEventGalleryPage />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}

@@ -3,14 +3,6 @@
   padding: 1.35rem 1rem;
 }
 
-.venue-card__map {
-  width: 3.25rem;
-  height: 3.25rem;
-  margin: 0 auto 0.75rem;
-  color: var(--forest);
-  opacity: 0.85;
-}
-
 .venue-card__title {
   margin: 0 0 0.5rem;
   font-family: var(--font-sans);

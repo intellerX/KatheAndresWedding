@@ -439,3 +439,8 @@
 .rsvp-modal--error .rsvp-modal__btn:hover {
   filter: brightness(1.06);
 }
+
+/*
+ * Galería post-evento (después del RSVP): la ruta vive en `postEventGalleryPath.ts`
+ * en esta misma carpeta; el teaser está en `PostEventPhotosTeaserCard/`.
+ */

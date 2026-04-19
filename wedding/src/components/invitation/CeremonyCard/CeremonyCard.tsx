@@ -1,35 +1,23 @@
+import { VenueMapEmbed } from '../VenueMapEmbed'
 import './CeremonyCard.css'
 
-function MapIcon() {
-  return (
-    <svg className="venue-card__map" viewBox="0 0 64 64" aria-hidden>
-      <rect
-        x="6"
-        y="10"
-        width="52"
-        height="44"
-        rx="4"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <path
-        d="M14 22h36M14 32h24M14 42h32"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        opacity="0.55"
-      />
-      <circle cx="44" cy="26" r="4" fill="currentColor" opacity="0.35" />
-    </svg>
-  )
-}
+const CEREMONY_EMBED_SRC =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.162745000652!2d-75.9221835!3d4.7417649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e386fe74f0020c3%3A0x3f86961d6f7faa48!2sIglesia%20Catolica%20Santisima%20Trinidad!5e0!3m2!1ses!2sco!4v1776615129036!5m2!1ses!2sco'
+
+const CEREMONY_MAPS_LINK = 'https://www.google.com/maps?q=4.7417649,-75.9221835'
 
 export function CeremonyCard() {
   return (
     <article className="inv-card inv-card--cream venue-card">
-      <MapIcon />
       <h3 className="venue-card__title">Ceremonia religiosa</h3>
-      <p className="venue-card__address">Iglesia Espíritu Santo — Cartago, Valle</p>
+      <p className="venue-card__address">
+        Iglesia Católica Santísima Trinidad — Cartago, Valle
+      </p>
+      <VenueMapEmbed
+        embedSrc={CEREMONY_EMBED_SRC}
+        mapTitle="Ubicación de la ceremonia en Google Maps"
+        openInMapsHref={CEREMONY_MAPS_LINK}
+      />
     </article>
   )
 }

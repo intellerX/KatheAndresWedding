@@ -8,7 +8,7 @@
   --white: #fafaf8;
 
   --font-display: 'Great Vibes', cursive;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-sans: 'Libre Baskerville', 'Times New Roman', cursive;
   --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
   /* Títulos de invitación / nombres / monograma */
   --font-wedding-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -107,4 +107,66 @@
 .venue-card__title,
 .venue-card__address {
   overflow-wrap: anywhere;
+}
+
+/* Mapa embebido (ceremonia / recepción): responsive, borde suave, enlace a Maps */
+.venue-map-embed {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.venue-map-embed__frame {
+  position: relative;
+  width: 100%;
+  height: clamp(7.75rem, 26vmin, 10.25rem);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(45, 90, 39, 0.16);
+  box-shadow:
+    0 2px 6px rgba(15, 40, 12, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  background: rgba(245, 236, 216, 0.9);
+}
+
+.venue-map-embed__iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.venue-map-embed__external {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--forest);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 0.15rem 0;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.venue-map-embed__external:hover {
+  color: var(--forest-deep);
+  border-bottom-color: var(--gold);
+}
+
+.venue-map-embed__external:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.venue-map-embed__external-icon {
+  flex-shrink: 0;
+  opacity: 0.9;
 }

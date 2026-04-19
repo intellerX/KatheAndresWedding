@@ -17,3 +17,4 @@ export type {
   AttendancePayload,
   AttendanceValue,
 } from './AttendanceConfirm/AttendanceConfirm'
+export { PostEventPhotosTeaserCard } from './PostEventPhotosTeaserCard/PostEventPhotosTeaserCard'
