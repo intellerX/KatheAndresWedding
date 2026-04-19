@@ -1,7 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { InvitationPage } from './InvitationPage'
+import {
+  DRESS_CODE_GALLERY_PATH,
+  POST_EVENT_GALLERY_PATH,
+} from './components/invitation/AttendanceConfirm/postEventGalleryPath'
+import { DressCodeGalleryPage } from './components/invitation/DressCodeGalleryPage/DressCodeGalleryPage'
 import { PostEventGalleryPage } from './components/invitation/PostEventGalleryPage/PostEventGalleryPage'
-import { POST_EVENT_GALLERY_PATH } from './components/invitation/AttendanceConfirm/postEventGalleryPath'
 
 function routerBasename(): string | undefined {
   const base = import.meta.env?.BASE
@@ -16,6 +20,7 @@ export default function App() {
     <BrowserRouter basename={routerBasename()}>
       <Routes>
         <Route path="/" element={<InvitationPage />} />
+        <Route path={DRESS_CODE_GALLERY_PATH} element={<DressCodeGalleryPage />} />
         <Route path={POST_EVENT_GALLERY_PATH} element={<PostEventGalleryPage />} />
       </Routes>
     </BrowserRouter>

@@ -441,6 +441,6 @@
 }
 
 /*
- * Galería post-evento (después del RSVP): la ruta vive en `postEventGalleryPath.ts`
- * en esta misma carpeta; el teaser está en `PostEventPhotosTeaserCard/`.
+ * Rutas extra (después del RSVP): `postEventGalleryPath.ts` en esta carpeta
+ * (`/vestimenta`, `/fotos`). Teasers: `DressCodeTeaserCard/`, `PostEventPhotosTeaserCard/`.
  */

@@ -1,0 +1,112 @@
+.dress-code-page {
+  padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+}
+
+.dress-code-page__header {
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.dress-code-page__back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--forest);
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.dress-code-page__back:hover {
+  color: var(--forest-deep);
+  border-bottom-color: var(--gold);
+}
+
+.dress-code-page__back:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.dress-code-page__title {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.65rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--forest);
+}
+
+.dress-code-page__subtitle {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.9;
+  text-wrap: pretty;
+}
+
+.dress-code-page__notice {
+  margin-top: 1rem;
+  padding: 1rem 1.15rem;
+  text-align: center;
+}
+
+.dress-code-page__notice-text {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.dress-code-page__grid {
+  list-style: none;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  column-count: 2;
+  column-gap: 0.65rem;
+  min-width: 0;
+}
+
+@media (min-width: 480px) {
+  .dress-code-page__grid {
+    column-count: 3;
+    column-gap: 0.75rem;
+  }
+}
+
+.dress-code-page__item {
+  break-inside: avoid;
+  margin-bottom: 0.65rem;
+}
+
+@media (min-width: 480px) {
+  .dress-code-page__item {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.dress-code-page__figure {
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(45, 90, 39, 0.12);
+  box-shadow:
+    0 2px 6px rgba(15, 40, 12, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  background: var(--cream-muted);
+}
+
+.dress-code-page__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

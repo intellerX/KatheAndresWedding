@@ -1,0 +1,62 @@
+.dress-code-teaser {
+  text-align: center;
+}
+
+.dress-code-teaser__title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4.2vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--forest);
+}
+
+.dress-code-teaser__lead {
+  margin: 0 0 1rem;
+  font-family: var(--font-reading);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.92;
+  text-wrap: pretty;
+}
+
+.dress-code-teaser__cta-wrap {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--ink);
+  opacity: 0.9;
+}
+
+.dress-code-teaser__cta {
+  display: inline;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--forest);
+  border-bottom: 2px solid var(--gold-muted);
+  padding-bottom: 0.05rem;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.dress-code-teaser__cta:hover {
+  color: var(--forest-deep);
+  border-bottom-color: var(--gold);
+}
+
+.dress-code-teaser__cta:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.dress-code-teaser__cta-hint {
+  font-size: 0.95rem;
+}
