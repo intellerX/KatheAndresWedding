@@ -15,7 +15,7 @@ export function PostEventPhotosTeaserCard() {
         Recuerdos del gran día
       </h2>
       <p className="post-event-photos-teaser__lead">
-      🌿Después de la celebración, aquí podrán ver las fotos del evento. Por ahora el álbum está
+      🌿Después de la celebración, aquí podrás ver las fotos del evento. Por ahora el álbum está
         vacío: las fotos aparecerán aquí cuando estén listas.🌿
       </p>
       <p className="post-event-photos-teaser__cta-wrap inv-teaser-cta-wrap">
