@@ -19,6 +19,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Sin esto, los secretos/variables solo del entorno «github-pages» no existen en este job:
+    # solo el job `deploy` los veía, y `npm run build` recibía VITE_* vacías.
+    environment:
+      name: github-pages
     steps:
       - uses: actions/checkout@v4
 
