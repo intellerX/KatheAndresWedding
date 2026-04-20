@@ -191,7 +191,6 @@ export function AttendanceConfirm({ onSubmit }: AttendanceConfirmProps) {
     if (!attendance || submitting || sent) return
 
     const payload = buildPayload()
-    console.log('[Invitación — confirmación]', payload)
 
     if (!supabase) {
       const missing = missingSupabaseEnvVars()
